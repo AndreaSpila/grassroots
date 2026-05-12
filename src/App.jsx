@@ -15,8 +15,8 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
 // ── CONFIGURAZIONE ────────────────────────────────────────
-const SUPABASE_URL = https://tlcpwfsipqzfexeymjjh.supabase.co;
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRsY3B3ZnNpcHF6ZmV4ZXltampoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NTUwODYsImV4cCI6MjA5MTQzMTA4Nn0.zTjieW7ipQBqUqbbw6TOngrNhPf5ykMjlCInn3fQgAQ"; 
+const SUPABASE_URL = "https://tlcpwfsipqzfexeymjjh.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRsY3B3ZnNpcHF6ZmV4ZXltampoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4NTUwODYsImV4cCI6MjA5MTQzMTA4Nn0.zTjieW7ipQBqUqbbw6TOngrNhPf5ykMjlCInn3fQgAQ";
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 const CATEGORIES = ["Ambiente","Cultura","Sport","Welfare","Educazione","Arte","Diritti","Altro"];
@@ -244,8 +244,7 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 .footer-bottom{max-width:1200px;margin:1.75rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:0.76rem;opacity:0.45}
 
 /* TOAST */
-.toast{position:fixed;bottom:2rem;right:2rem;background:#2a1f0d;color:var(--cream);padding:0.9rem 1.4rem;border-radius:8px;z-index:999;font-size:0.
-88rem;animation:slideUp 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.toast{position:fixed;bottom:2rem;right:2rem;background:#2a1f0d;color:var(--cream);padding:0.9rem 1.4rem;border-radius:8px;z-index:999;font-size:0.88rem;animation:slideUp 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 
 @media(max-width:768px){
@@ -261,11 +260,9 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 
 // ── LOGO SVG ──────────────────────────────────────────────
 const LogoSVG = ({ size = 54 }) => (
-  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" 
-       style={{ height: size, width: "auto" }} />
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: size, width: "auto" }} />
 );
-);
-.pn
+
 // ── TOAST ─────────────────────────────────────────────────
 function Toast({ msg, onClose }) {
   useEffect(() => { const t = setTimeout(onClose, 3500); return () => clearTimeout(t); }, []);
