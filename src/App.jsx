@@ -261,7 +261,7 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 
 // ── LOGO SVG ──────────────────────────────────────────────
 const LogoSVG = ({ size = 54 }) => (
-  <img src="/Logo_Grassrooots_New.png" alt="GrassRoots" 
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" 
        style={{ height: size, width: "auto" }} />
 );
 );
