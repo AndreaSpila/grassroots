@@ -259,8 +259,8 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 `;
 
 // ── LOGO SVG ──────────────────────────────────────────────
-const LogoSVG = ({ size = 100 }) => (
-  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: size, width: "100" }} />
+const LogoSVG = ({ size = 108 }) => (
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: size, width: "auto" }} />
 );
 
 // ── TOAST ─────────────────────────────────────────────────
