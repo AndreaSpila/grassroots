@@ -244,7 +244,8 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 .footer-bottom{max-width:1200px;margin:1.75rem auto 0;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,0.08);display:flex;justify-content:space-between;font-size:0.76rem;opacity:0.45}
 
 /* TOAST */
-.toast{position:fixed;bottom:2rem;right:2rem;background:#2a1f0d;color:var(--cream);padding:0.9rem 1.4rem;border-radius:8px;z-index:999;font-size:0.88rem;animation:slideUp 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
+.toast{position:fixed;bottom:2rem;right:2rem;background:#2a1f0d;color:var(--cream);padding:0.9rem 1.4rem;border-radius:8px;z-index:999;font-size:0.
+88rem;animation:slideUp 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 
 @media(max-width:768px){
