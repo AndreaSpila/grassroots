@@ -42,17 +42,17 @@ const css = `
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--warm-white);color:var(--text);line-height:1.6}
 
 /* NAV */
-nav{background:White color:var(--cream);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
-.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:120px}
-.nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--earth-light)}
-.nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block}
+nav{background:white;color:var(--text);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-bottom:1px solid var(--border)}
+.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:110px}
+.nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--green)}
+.nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block;color:var(--text-muted)}
 .nav-links{display:flex;gap:0.25rem;align-items:center}
 .nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:0.9rem;padding:0.6rem 1rem;cursor:pointer;border-radius:4px;opacity:0.75;transition:all 0.2s}
-.nav-link:hover,.nav-link.active{opacity:1;background:rgba(255,255,255,0.1)}
+.nav-link:hover,.nav-link.active{opacity:1;background:var(--green-pale)}
 .nav-cta{background:var(--red);border:none;color:white;font-family:'Source Serif 4',serif;font-size:0.85rem;padding:0.55rem 1.1rem;cursor:pointer;border-radius:4px;font-weight:600;transition:all 0.2s;margin-left:0.5rem}
 .nav-cta:hover{background:var(--red-light)}
-.nav-user{display:flex;align-items:center;gap:0.75rem;font-size:0.82rem;color:var(--cream);opacity:0.8}
-.nav-user button{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--cream);font-size:0.78rem;padding:0.3rem 0.7rem;border-radius:4px;cursor:pointer}
+.nav-user{display:flex;align-items:center;gap:0.75rem;font-size:0.82rem;color:var(--text);opacity:0.8}
+.nav-user button{background:var(--green-pale);border:1px solid var(--border);color:var(--text);font-size:0.78rem;padding:0.3rem 0.7rem;border-radius:4px;cursor:pointer}
 
 /* LAYOUT */
 .page{min-height:calc(100vh - 64px)}
@@ -259,8 +259,8 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 `;
 
 // ── LOGO SVG ──────────────────────────────────────────────
-const LogoSVG = ({ size = 108 }) => (
- <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "108px", width: "auto", borderRadius: "8px", background: "white", padding: "4px" }} />
+const LogoSVG = ({ size = 54 }) => (
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "100px", width: "auto" }} />
 );
 
 // ── TOAST ─────────────────────────────────────────────────
