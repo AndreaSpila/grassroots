@@ -261,11 +261,11 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 
 // ── LOGO SVG ──────────────────────────────────────────────
 const LogoSVG = ({ size = 54 }) => (
-  <img src="/logo_grassroots.png" alt="GrassRoots" 
+  <img src="/Logo_Grassrooots_New.png" alt="GrassRoots" 
        style={{ height: size, width: "auto" }} />
 );
 );
-
+.pn
 // ── TOAST ─────────────────────────────────────────────────
 function Toast({ msg, onClose }) {
   useEffect(() => { const t = setTimeout(onClose, 3500); return () => clearTimeout(t); }, []);
