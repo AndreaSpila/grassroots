@@ -260,13 +260,9 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 
 // ── LOGO SVG ──────────────────────────────────────────────
 const LogoSVG = ({ size = 54 }) => (
-  <svg width={size} height={size} viewBox="0 0 80 80" fill="none">
-    <ellipse cx="40" cy="54" rx="28" ry="5" fill="#c9a96e" opacity="0.7"/>
-    <path d="M40 50 Q38 38 32 28 Q36 34 40 32 Q44 34 48 28 Q42 38 40 50Z" fill="#c9a96e"/>
-    <path d="M28 50 Q27 40 22 30 Q25 36 28 34 Q31 36 33 30 Q29 40 28 50Z" fill="#a07840" opacity="0.85"/>
-    <path d="M52 50 Q53 40 58 30 Q55 36 52 34 Q49 36 47 30 Q51 40 52 50Z" fill="#a07840" opacity="0.85"/>
-    <path d="M20 54 Q25 46 40 44 Q55 46 60 54" stroke="#8a9640" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-  </svg>
+  <img src="/logo_grassroots.png" alt="GrassRoots" 
+       style={{ height: size, width: "auto" }} />
+);
 );
 
 // ── TOAST ─────────────────────────────────────────────────
