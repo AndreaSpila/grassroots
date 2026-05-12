@@ -43,7 +43,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--warm-white);col
 
 /* NAV */
 nav{background:white;color:var(--text);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-bottom:1px solid var(--border)}
-.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:110px}
+.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:160px}
 .nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--green)}
 .nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block;color:var(--text-muted)}
 .nav-links{display:flex;gap:0.25rem;align-items:center}
@@ -260,7 +260,7 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 
 // ── LOGO SVG ──────────────────────────────────────────────
 const LogoSVG = ({ size = 54 }) => (
-  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "100px", width: "auto" }} />
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "150px", width: "auto" }} />
 );
 
 // ── TOAST ─────────────────────────────────────────────────
