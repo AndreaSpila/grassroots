@@ -43,7 +43,7 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--warm-white);col
 
 /* NAV */
 nav{background:White color:var(--cream);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
-.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.75rem 0;cursor:pointer}
+.nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:120px}
 .nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--earth-light)}
 .nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block}
 .nav-links{display:flex;gap:0.25rem;align-items:center}
