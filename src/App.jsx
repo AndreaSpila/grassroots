@@ -42,12 +42,12 @@ const css = `
 body{font-family:'Source Serif 4',Georgia,serif;background:var(--warm-white);color:var(--text);line-height:1.6}
 
 /* NAV */
-nav{background:#2a1f0d;color:var(--cream);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
+nav{background:White color:var(--cream);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.25)}
 .nav-brand{display:flex;align-items:center;gap:1rem;padding:0.75rem 0;cursor:pointer}
 .nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--earth-light)}
 .nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block}
 .nav-links{display:flex;gap:0.25rem;align-items:center}
-.nav-link{background:none;border:none;color:var(--cream);font-family:'Source Serif 4',serif;font-size:0.9rem;padding:0.6rem 1rem;cursor:pointer;border-radius:4px;opacity:0.75;transition:all 0.2s}
+.nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:0.9rem;padding:0.6rem 1rem;cursor:pointer;border-radius:4px;opacity:0.75;transition:all 0.2s}
 .nav-link:hover,.nav-link.active{opacity:1;background:rgba(255,255,255,0.1)}
 .nav-cta{background:var(--red);border:none;color:white;font-family:'Source Serif 4',serif;font-size:0.85rem;padding:0.55rem 1.1rem;cursor:pointer;border-radius:4px;font-weight:600;transition:all 0.2s;margin-left:0.5rem}
 .nav-cta:hover{background:var(--red-light)}
