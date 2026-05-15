@@ -248,14 +248,93 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 
 @media(max-width:768px){
+  /* NAV mobile */
   .nav-links{display:none}
+  .nav-mobile-menu{display:flex}
+  .nav-brand{height:90px}
+  nav{padding:0 1rem}
+
+  /* HERO mobile */
+  .hero{padding:3rem 1.25rem 2.5rem}
+  .hero h1{font-size:1.9rem}
+  .hero-sub{font-size:0.95rem}
+  .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:280px;justify-content:center}
+
+  /* STATS mobile */
+  .stats-bar{flex-wrap:wrap}
+  .stat-item{padding:1rem 1.5rem;flex:1 1 40%}
+
+  /* LAYOUT mobile */
+  .container{padding:1rem}
+  .section{padding:2rem 1rem}
+  .page-header{padding:1.5rem 1rem}
+  .page-header h1{font-size:1.6rem}
+
+  /* CARDS mobile */
+  .cards-grid{grid-template-columns:1fr}
+  .assoc-grid{grid-template-columns:1fr}
+
+  /* EVENTS mobile */
+  .event-row{grid-template-columns:56px 1fr;gap:0.75rem;padding:1rem}
+  .event-row > div:last-child{display:none}
+
+  /* MAP mobile */
   .map-layout{grid-template-columns:1fr}
-  .dash-grid{grid-template-columns:1fr 1fr}
-  .footer-inner{grid-template-columns:1fr}
-  .event-row{grid-template-columns:60px 1fr}
-  .form-row{grid-template-columns:1fr}
+  #leaflet-map{height:320px}
+  .map-sidebar{max-height:280px}
+
+  /* MODALS mobile */
+  .modal{border-radius:12px 12px 0 0;position:fixed;bottom:0;left:0;right:0;max-height:85vh;margin:0;max-width:100%}
+  .overlay{align-items:flex-end;padding:0}
   .modal-meta{grid-template-columns:1fr}
+  .modal-actions{flex-direction:column}
+  .modal-actions .btn{width:100%;justify-content:center}
+
+  /* FORMS mobile */
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:1.25rem}
+  .reg-steps{font-size:0.8rem}
+
+  /* DASHBOARD mobile */
+  .dash-grid{grid-template-columns:1fr 1fr}
+  .dash-header{flex-direction:column;text-align:center;gap:1rem;padding:1.5rem}
+
+  /* EDITORIAL mobile */
+  .candidate-actions{flex-direction:column}
+  .candidate-actions .btn{width:100%;justify-content:center}
+  .editorial-tabs{overflow-x:auto}
+
+  /* FOOTER mobile */
+  .footer-inner{grid-template-columns:1fr;gap:1.5rem}
+  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+
+  /* FILTERS mobile */
+  .filters{padding:0.75rem 1rem;gap:0.5rem}
+  .search-input{width:100%}
+
+  /* TOAST mobile */
+  .toast{bottom:1rem;right:1rem;left:1rem;text-align:center}
 }
+
+@media(max-width:480px){
+  .hero h1{font-size:1.6rem}
+  .stat-item{flex:1 1 100%;border-right:none;border-bottom:1px solid var(--border)}
+  .dash-grid{grid-template-columns:1fr}
+  .reg-step-label{display:none}
+}
+
+/* HAMBURGER MENU */
+.nav-mobile-menu{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px}
+.nav-mobile-menu span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.2s}
+.mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499}
+.mobile-nav-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:white;z-index:501;padding:2rem 1.5rem;box-shadow:-4px 0 24px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform 0.3s ease}
+.mobile-nav-drawer.open{transform:translateX(0)}
+.mobile-nav-overlay.open{display:block}
+.mobile-nav-close{background:none;border:none;font-size:1.4rem;cursor:pointer;float:right;color:var(--text-muted)}
+.mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:2rem}
+.mobile-nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:1.05rem;padding:0.75rem 0.5rem;cursor:pointer;text-align:left;border-bottom:1px solid var(--border);width:100%}
+.mobile-nav-link:hover{color:var(--green)}
 `;
 
 // ── LOGO SVG ──────────────────────────────────────────────
@@ -313,13 +392,21 @@ function LeafletMap({ associations, onSelectAssoc }) {
       if (!a.lat || !a.lng) return;
       const icon = L.divIcon({
         className: "",
-        html: `<div style="width:38px;height:38px;border-radius:50%;background:${CAT_COLOR[a.category]||"#7a8c3a"};border:3px solid white;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 2px 8px rgba(0,0,0,0.25);cursor:pointer">${a.emoji||"🌿"}</div>`,
-        iconSize: [38, 38], iconAnchor: [19, 19],
+        html: `<div style="width:42px;height:42px;border-radius:50%;background:${CAT_COLOR[a.category]||"#7a8c3a"};border:3px solid white;display:flex;align-items:center;justify-content:center;font-size:1.2rem;box-shadow:0 2px 8px rgba(0,0,0,0.25);cursor:pointer;transition:transform 0.2s" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">${a.emoji||"🌿"}</div>`,
+        iconSize: [42, 42], iconAnchor: [21, 21],
       });
+      const popup = L.popup({ maxWidth: 220 }).setContent(
+        `<div class="popup-name">${a.emoji || "🌿"} ${a.name}</div>
+         <div class="popup-meta">📍 ${a.city} · ${a.category}</div>
+         <button onclick="window.__grassrootsSelectAssoc('${a.id}')" style="margin-top:0.6rem;background:#7a8c3a;color:white;border:none;padding:0.35rem 0.85rem;border-radius:4px;font-size:0.8rem;cursor:pointer;width:100%">Vedi profilo →</button>`
+      );
       const marker = L.marker([a.lat, a.lng], { icon })
         .addTo(mapInstance.current)
-        .bindPopup(`<div class="popup-name">${a.name}</div><div class="popup-meta">📍 ${a.city} · ${a.category}</div>`);
-      marker.on("click", () => onSelectAssoc(a));
+        .bindPopup(popup);
+      marker.on("click", () => {
+        onSelectAssoc(a);
+        marker.openPopup();
+      });
       markersRef.current.push(marker);
     });
   }, [onSelectAssoc]);
@@ -978,6 +1065,18 @@ export default function App() {
   const [showAuth, setShowAuth] = useState(false);
   const [toast, setToast] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const showToast = (msg) => setToast(msg);
+
+  // Expose assoc selector globally for map popup buttons
+  useEffect(() => {
+    window.__grassrootsSelectAssoc = (id) => {
+      const assoc = associations.find(a => a.id === id);
+      if (assoc) setAssocModal(assoc);
+    };
+    return () => { delete window.__grassrootsSelectAssoc; };
+  }, [associations]);
 
   const showToast = (msg) => setToast(msg);
 
@@ -1035,9 +1134,36 @@ export default function App() {
     { key: "map", label: "Mappa" },
   ];
 
+  const goTo = (p) => { setPage(p); setMobileMenuOpen(false); };
+
   return (
     <>
       <style>{css}</style>
+
+      {/* MOBILE DRAWER */}
+      <div className={`mobile-nav-overlay ${mobileMenuOpen ? "open" : ""}`} onClick={() => setMobileMenuOpen(false)} />
+      <div className={`mobile-nav-drawer ${mobileMenuOpen ? "open" : ""}`}>
+        <button className="mobile-nav-close" onClick={() => setMobileMenuOpen(false)}>✕</button>
+        <div style={{ marginTop: "1rem" }}>
+          <LogoSVG size={60} />
+        </div>
+        <div className="mobile-nav-links">
+          {navItems.map(n => <button key={n.key} className="mobile-nav-link" onClick={() => goTo(n.key)}>{n.label}</button>)}
+          {user ? (
+            <>
+              {userAssoc?.status === "approved" && <button className="mobile-nav-link" onClick={() => goTo("dashboard")}>Dashboard</button>}
+              <button className="mobile-nav-link" onClick={() => goTo("editorial")}>Redazione</button>
+              <button className="mobile-nav-link" onClick={() => { handleLogout(); setMobileMenuOpen(false); }}>Esci</button>
+            </>
+          ) : (
+            <>
+              <button className="mobile-nav-link" onClick={() => { setShowAuth(true); setMobileMenuOpen(false); }}>Accedi</button>
+              <button className="mobile-nav-link" style={{ color: "var(--red)", fontWeight: 600 }} onClick={() => goTo("register")}>Candidati</button>
+            </>
+          )}
+        </div>
+      </div>
+
       <nav>
         <div className="nav-brand" onClick={() => setPage("home")}>
           <LogoSVG size={54} />
@@ -1062,6 +1188,10 @@ export default function App() {
             </>
           )}
         </div>
+        {/* HAMBURGER */}
+        <button className="nav-mobile-menu" onClick={() => setMobileMenuOpen(true)}>
+          <span /><span /><span />
+        </button>
       </nav>
 
       {page === "home" && <HomePage setPage={setPage} events={events} assocs={associations} onEventClick={setEventModal} onAssocClick={setAssocModal} />}

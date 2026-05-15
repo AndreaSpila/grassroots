@@ -251,7 +251,7 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
   /* NAV mobile */
   .nav-links{display:none}
   .nav-mobile-menu{display:flex}
-  .nav-brand{height:90px}
+  .nav-brand{height:80px}
   nav{padding:0 1rem}
 
   /* HERO mobile */
@@ -325,8 +325,8 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 }
 
 /* HAMBURGER MENU */
-.nav-mobile-menu{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px}
-.nav-mobile-menu span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all 0.2s}
+.nav-mobile-menu{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;flex-shrink:0}
+.nav-mobile-menu span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
 .mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499}
 .mobile-nav-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:white;z-index:501;padding:2rem 1.5rem;box-shadow:-4px 0 24px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform 0.3s ease}
 .mobile-nav-drawer.open{transform:translateX(0)}
@@ -335,6 +335,10 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 .mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:2rem}
 .mobile-nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:1.05rem;padding:0.75rem 0.5rem;cursor:pointer;text-align:left;border-bottom:1px solid var(--border);width:100%}
 .mobile-nav-link:hover{color:var(--green)}
+
+@media(max-width:768px){
+  .nav-mobile-menu{display:flex}
+}
 `;
 
 // ── LOGO SVG ──────────────────────────────────────────────
@@ -1168,8 +1172,7 @@ export default function App() {
         <div className="nav-brand" onClick={() => setPage("home")}>
           <LogoSVG size={54} />
           <div>
-            <span className="nav-brand-text">grass roots</span>
-            <span className="nav-brand-sub">fare rete, fuori dalla rete</span>
+            <span className="nav-brand-sub" style={{ fontSize: "0.75rem", opacity: 0.7, letterSpacing: "0.12em", textTransform: "uppercase", fontStyle: "italic", color: "var(--text-muted)" }}>fare rete, fuori dalla rete</span>
           </div>
         </div>
         <div className="nav-links">
