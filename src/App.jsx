@@ -1082,7 +1082,7 @@ export default function App() {
     return () => { delete window.__grassrootsSelectAssoc; };
   }, [associations]);
 
-  const showToast = (msg) => setToast(msg);
+
 
   // Auth
   useEffect(() => {
