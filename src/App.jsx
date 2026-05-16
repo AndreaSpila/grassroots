@@ -1162,7 +1162,7 @@ export default function App() {
 
       <nav>
         <div className="nav-brand" onClick={() => setPage("home")}>
-          <LogoSVG size={54} />
+          <LogoSVG size={120} />
           <div>
             <span className="nav-brand-sub" style={{ fontSize: "0.75rem", opacity: 0.7, letterSpacing: "0.12em", textTransform: "uppercase", fontStyle: "italic", color: "var(--text-muted)" }}>fare rete, fuori dalla rete</span>
           </div>
