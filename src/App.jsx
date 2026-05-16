@@ -44,8 +44,6 @@ body{font-family:'Source Serif 4',Georgia,serif;background:var(--warm-white);col
 /* NAV */
 nav{background:white;color:var(--text);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:500;box-shadow:0 2px 12px rgba(0,0,0,0.08);border-bottom:1px solid var(--border)}
 .nav-brand{display:flex;align-items:center;gap:1rem;padding:0.5rem 0;cursor:pointer;height:160px}
-.nav-brand-text{font-family:'Source Serif 4',serif;font-size:1.55rem;font-weight:600;letter-spacing:0.02em;color:var(--green)}
-.nav-brand-sub{font-size:0.65rem;opacity:0.65;letter-spacing:0.15em;text-transform:uppercase;font-style:italic;display:block;color:var(--text-muted)}
 .nav-links{display:flex;gap:0.25rem;align-items:center}
 .nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:0.9rem;padding:0.6rem 1rem;cursor:pointer;border-radius:4px;opacity:0.75;transition:all 0.2s}
 .nav-link:hover,.nav-link.active{opacity:1;background:var(--green-pale)}
@@ -247,11 +245,23 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
 .toast{position:fixed;bottom:2rem;right:2rem;background:#2a1f0d;color:var(--cream);padding:0.9rem 1.4rem;border-radius:8px;z-index:999;font-size:0.88rem;animation:slideUp 0.3s ease;box-shadow:0 8px 24px rgba(0,0,0,0.25)}
 @keyframes slideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
 
+/* HAMBURGER MENU */
+.nav-mobile-menu{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;flex-shrink:0}
+.nav-mobile-menu span{display:block;width:26px;height:2.5px;background:var(--text);border-radius:2px}
+.mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499}
+.mobile-nav-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:white;z-index:501;padding:2rem 1.5rem;box-shadow:-4px 0 24px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform 0.3s ease}
+.mobile-nav-drawer.open{transform:translateX(0)}
+.mobile-nav-overlay.open{display:block}
+.mobile-nav-close{background:none;border:none;font-size:1.4rem;cursor:pointer;float:right;color:var(--text-muted)}
+.mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:2rem}
+.mobile-nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:1.05rem;padding:0.75rem 0.5rem;cursor:pointer;text-align:left;border-bottom:1px solid var(--border);width:100%}
+.mobile-nav-link:hover{color:var(--green)}
+
 @media(max-width:768px){
   /* NAV mobile */
   .nav-links{display:none}
-  .nav-mobile-menu{display:flex}
-  .nav-brand{height:80px}
+  .nav-mobile-menu{display:flex !important}
+  .nav-brand{height:100px}
   nav{padding:0 1rem}
 
   /* HERO mobile */
@@ -323,27 +333,11 @@ footer{background:#2a1f0d;color:var(--cream);padding:3rem 2rem;margin-top:4rem}
   .dash-grid{grid-template-columns:1fr}
   .reg-step-label{display:none}
 }
-
-/* HAMBURGER MENU */
-.nav-mobile-menu{display:none;background:none;border:none;cursor:pointer;padding:0.5rem;flex-direction:column;gap:5px;flex-shrink:0}
-.nav-mobile-menu span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
-.mobile-nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:499}
-.mobile-nav-drawer{position:fixed;top:0;right:0;bottom:0;width:260px;background:white;z-index:501;padding:2rem 1.5rem;box-shadow:-4px 0 24px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform 0.3s ease}
-.mobile-nav-drawer.open{transform:translateX(0)}
-.mobile-nav-overlay.open{display:block}
-.mobile-nav-close{background:none;border:none;font-size:1.4rem;cursor:pointer;float:right;color:var(--text-muted)}
-.mobile-nav-links{display:flex;flex-direction:column;gap:0.25rem;margin-top:2rem}
-.mobile-nav-link{background:none;border:none;color:var(--text);font-family:'Source Serif 4',serif;font-size:1.05rem;padding:0.75rem 0.5rem;cursor:pointer;text-align:left;border-bottom:1px solid var(--border);width:100%}
-.mobile-nav-link:hover{color:var(--green)}
-
-@media(max-width:768px){
-  .nav-mobile-menu{display:flex}
-}
 `;
 
 // ── LOGO SVG ──────────────────────────────────────────────
-const LogoSVG = ({ size = 54 }) => (
-  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "150px", width: "auto" }} />
+const LogoSVG = () => (
+  <img src="/Logo_Grassroots_New.png" alt="GrassRoots" style={{ height: "120px", width: "auto" }} />
 );
 
 // ── TOAST ─────────────────────────────────────────────────
@@ -1081,8 +1075,6 @@ export default function App() {
     };
     return () => { delete window.__grassrootsSelectAssoc; };
   }, [associations]);
-
-
 
   // Auth
   useEffect(() => {
