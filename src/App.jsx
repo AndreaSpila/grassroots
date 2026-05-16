@@ -1056,7 +1056,7 @@ export default function App() {
   const [page, setPage] = useState("home");
   const [user, setUser] = useState(null);
   const [userAssoc, setUserAssoc] = useState(null);
-  const [associations, setAssociations] = useState([]);
+  const [associations, setAssociationcandidats] = useState([]);
   const [events, setEvents] = useState([]);
   const [eventModal, setEventModal] = useState(null);
   const [assocModal, setAssocModal] = useState(null);
@@ -1154,7 +1154,7 @@ export default function App() {
           ) : (
             <>
               <button className="mobile-nav-link" onClick={() => { setShowAuth(true); setMobileMenuOpen(false); }}>Accedi</button>
-              <button className="mobile-nav-link" style={{ color: "var(--red)", fontWeight: 600 }} onClick={() => goTo("register")}>Candidati</button>
+              <button className="mobile-nav-link" style={{ color: "var(--red)", fontWeight: 600 }} onClick={() => goTo("register")}>Candida la tua Associazione</button>
             </>
           )}
         </div>
