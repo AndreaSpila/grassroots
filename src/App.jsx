@@ -1179,7 +1179,7 @@ export default function App() {
           ) : (
             <>
               <button className="nav-link" onClick={() => setShowAuth(true)}>Accedi</button>
-              <button className="nav-cta" onClick={() => setPage("register")}>Candidati</button>
+              <button className="nav-cta" onClick={() => setPage("register")}>Candida la tua Associazione</button>
             </>
           )}
         </div>
